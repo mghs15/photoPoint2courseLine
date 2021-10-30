@@ -301,7 +301,7 @@ map.on('load', () => {
   map.addSource('my-source', {
     type: 'vector',
     tiles: ['https://ppmap.github.io/pptest2/xyz/photo/{z}/{x}/{y}.pbf'],
-    minzoom: 6,
+    minzoom: 11,
     maxzoom: 11,
     attribution: "地図・空中写真閲覧サービス"
   });
@@ -359,11 +359,19 @@ map.on('load', () => {
     },
     'source-layer': 'single'
   });
-    
+  
+  map.addSource('my-source-sub', {
+    type: 'vector',
+    tiles: ['https://mghs15.github.io/webmap-template/courseline/{z}/{x}/{y}.pbf'],
+    minzoom: 6,
+    maxzoom: 10,
+    attribution: "地図・空中写真閲覧サービス"
+  });
+  
   map.addLayer({
     'id': 'my-sub02-layer',
-    'type': 'circle',
-    'source': 'my-source',
+    'type': 'line',
+    'source': 'my-source-sub',
     'minzoom': 6,
     'maxzoom': 11,
     'filter': makeFilter(),
@@ -371,17 +379,11 @@ map.on('load', () => {
       'visibility': 'visible'
     },
     'paint': {
-      'circle-radius': [
-        "interpolate", ["linear"], ["zoom"],
-        11,8,
-        15,12
-      ],
-      'circle-color': ['rgb', 255, 0, 0],
-      'circle-opacity': 0.5,
-      'circle-stroke-color': ['rgba', 255,255,255,1],
-      'circle-stroke-width': 2
+      'line-color': ['rgb', 255, 0, 0],
+      'line-opacity': 0.5,
+      'line-width': 2
     },
-    'source-layer': 'cluster'
+    'source-layer': 'courseline'
   });
   
   refleshAll();
