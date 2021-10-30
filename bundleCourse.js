@@ -1,9 +1,10 @@
 const fs = require("fs");
 
 const json = require("./sample1.json");
+const lines = json.resultJsondata;
 
 const tmp = {};
-json.resultJsondata.forEach( p => {
+lines.forEach( p => {
   
   const c = {};
   
@@ -24,15 +25,20 @@ json.resultJsondata.forEach( p => {
     tmp[c.referenceNumber][c.courseNumber] = {
       "properties": {
         //"specificationId" : c.specificationId,
+        /*
         "scale" : c.scale,
         "searchDate" : c.searchDate,
         "colorTypeId" : c.colorTypeId
+        */
+        "scale" : c.scale,
+        "date" : "2002-01-31", //c.searchDate,
+        "color" : c.colorTypeId
       },
       "vertex" : {}
     };
   }
   
-  tmp[c.referenceNumber][c.courseNumber].vertex[c.photoNumber] = [c.lng, c.lat];
+  tmp[c.referenceNumber][c.courseNumber].vertex[c.photoNumber] = [+c.lng, +c.lat];
   
 });
 
@@ -42,6 +48,8 @@ const geojson = {
   "type": "FeatureCollection",
   "features": []
 };
+
+let str = "";
 
 for(reference in tmp){
   const r = tmp[reference];
@@ -69,17 +77,21 @@ for(reference in tmp){
     
     //書き出し
     geojson.features.push(g);
+    str = str + JSON.stringify(g) + "\n";
       // or
+    /*
     const res = JSON.stringify(g) + "\n";
     try {
       fs.appendFileSync("sample.ndjson", res);
     }catch (e) {
       console.log(e);
     }
+    */
     
   }
 }
 
-fs.writeFileSync("sample.geojson", JSON.stringify(geojson));
+fs.writeFileSync("_sample.geojson", JSON.stringify(geojson));
+fs.writeFileSync("_sample.ndjson", str);
 
 
