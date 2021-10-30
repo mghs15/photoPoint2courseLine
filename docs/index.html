@@ -362,7 +362,7 @@ map.on('load', () => {
   
   map.addSource('my-source-sub', {
     type: 'vector',
-    tiles: ['https://mghs15.github.io/webmap-template/courseline/{z}/{x}/{y}.pbf'],
+    tiles: ['https://mghs15.github.io/photoPoint2courseLine/courseline/{z}/{x}/{y}.pbf'],
     minzoom: 6,
     maxzoom: 10,
     attribution: "地図・空中写真閲覧サービス"
@@ -381,7 +381,7 @@ map.on('load', () => {
     'paint': {
       'line-color': ['rgb', 255, 0, 0],
       'line-opacity': 0.5,
-      'line-width': 2
+      'line-width': 4
     },
     'source-layer': 'courseline'
   });
