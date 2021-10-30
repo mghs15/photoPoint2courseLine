@@ -1,0 +1,14 @@
+{
+"name": "courseline",
+"description": "courseline",
+"version": "2",
+"minzoom": "6",
+"maxzoom": "10",
+"center": "139.746094,35.644389,10",
+"bounds": "139.708639,35.644389,139.792750,35.706861",
+"type": "overlay",
+"format": "pbf",
+"generator": "tippecanoe v1.36.0",
+"generator_options": "tippecanoe -e courseline _sample.ndjson --force --no-tile-size-limit --no-tile-compression --no-feature-limit '--minimum-zoom=6' '--maximum-zoom=10' '--base-zoom=6' '--simplification=2' -l courseline",
+"json": "{\"vector_layers\": [ { \"id\": \"courseline\", \"description\": \"\", \"minzoom\": 6, \"maxzoom\": 10, \"fields\": {\"color\": \"Number\", \"courseNumber\": \"String\", \"date\": \"String\", \"referenceNumber\": \"String\", \"scale\": \"Number\"} } ],\"tilestats\": {\"layerCount\": 1,\"layers\": [{\"layer\": \"courseline\",\"count\": 53,\"geometry\": \"LineString\",\"attributeCount\": 5,\"attributes\": [{\"attribute\": \"color\",\"count\": 2,\"type\": \"number\",\"values\": [1,2],\"min\": 1,\"max\": 2},{\"attribute\": \"courseNumber\",\"count\": 23,\"type\": \"string\",\"values\": [\"C1\",\"C2\",\"C3\",\"C4\",\"C5\",\"C54\",\"C55\",\"C56\",\"C57\",\"C58\",\"C59\",\"C6\",\"C60\",\"C7\",\"M142-A-5No2\",\"M200\",\"M223\",\"M377\",\"M385\",\"M388\",\"M389\",\"M44-A-5LT\",\"M449\"]},{\"attribute\": \"date\",\"count\": 1,\"type\": \"string\",\"values\": [\"2002-01-31\"]},{\"attribute\": \"referenceNumber\",\"count\": 18,\"type\": \"string\",\"values\": [\"8910\",\"8911\",\"8921\",\"8922\",\"95A1\",\"95C3\",\"95D4\",\"B29\",\"B4\",\"B7\",\"B8\",\"C29D\",\"CKT20015X\",\"CKT20064X\",\"CKT20092\",\"M23ﾊ\",\"M23ﾛ\",\"USA\"]},{\"attribute\": \"scale\",\"count\": 16,\"type\": \"number\",\"values\": [0,10000,11000,15000,17000,20000,23000,30000,39739,39921,43742,5000,9877,9883,9896,9987],\"min\": 0,\"max\": 43742}]}]}}"
+}
