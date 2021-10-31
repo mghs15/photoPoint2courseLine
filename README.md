@@ -11,11 +11,12 @@ https://mghs15.github.io/photoPoint2courseLine/
 ```
 node bundleCourseStream.js
 ```
-4. ndjsonをtippecanoeを用いてベクトルタイルへ変換。（各種設定は、jsファイルにハードコード。）
+3. ndjsonをtippecanoeを用いてベクトルタイルへ変換。（各種設定は、jsファイルにハードコード。）
 ```
 node tilingCourseLineAndPhotoPoint.js
 ```
 ## メモ
+* tippecanoeとNode.jsが必要。
 * 整理番号、コース番号、写真番号から復活させる。
 * 大体一直線なので、ベクトルタイル化の際に、tippecanoeの`--simplificaiton`がかなり効いてきそう。
 
