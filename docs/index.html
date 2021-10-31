@@ -300,7 +300,7 @@ map.on('load', () => {
   
   map.addSource('my-source', {
     type: 'vector',
-    tiles: ['https://ppmap.github.io/pptest2/xyz/photo/{z}/{x}/{y}.pbf'],
+    tiles: ['https://mghs15.github.io/photoPoint2courseLine/photo/{z}/{x}/{y}.pbf'],
     minzoom: 11,
     maxzoom: 11,
     attribution: "地図・空中写真閲覧サービス"
@@ -360,9 +360,10 @@ map.on('load', () => {
     'source-layer': 'single'
   });
   
+  
   map.addSource('my-source-sub', {
     type: 'vector',
-    tiles: ['https://mghs15.github.io/photoPoint2courseLine/courseline/{z}/{x}/{y}.pbf'],
+    tiles: ['https://mghs15.github.io/photoPoint2courseLine/photo/{z}/{x}/{y}.pbf'],
     minzoom: 6,
     maxzoom: 10,
     attribution: "地図・空中写真閲覧サービス"
@@ -373,14 +374,18 @@ map.on('load', () => {
     'type': 'line',
     'source': 'my-source-sub',
     'minzoom': 6,
-    'maxzoom': 11,
+    'maxzoom': 15,
     'filter': makeFilter(),
     'layout': {
       'visibility': 'visible'
     },
     'paint': {
       'line-color': ['rgb', 255, 0, 0],
-      'line-opacity': 0.5,
+      'line-opacity': [
+        "interpolate", ["linear"], ["zoom"],
+        11,0.5,
+        15,0
+      ],
       'line-width': 4
     },
     'source-layer': 'courseline'
