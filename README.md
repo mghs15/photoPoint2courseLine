@@ -19,6 +19,7 @@ node tilingCourseLineAndPhotoPoint.js
 * tippecanoeとNode.jsが必要。
 * 整理番号、コース番号、写真番号から復活させる。
 * 大体一直線なので、ベクトルタイル化の際に、tippecanoeの`--simplificaiton`がかなり効いてきそう。
+* 整理番号でエリアを作成するか、重心まで落とし込んでしまうと、データ容量を削減できる可能性。（`convertAreaOrCentroid.js`） 
 
 ## 出典
 * 写真のデータ等々：地図・空中写真閲覧サービス
