@@ -51,6 +51,7 @@ for( name in tmp ){
   if(poly) geojson.features.push(poly);
   
   //重心
+  //ほかに、pointOnFeature 
   const centroid = turf.centroid(fc);
   if(centroid){ 
     centroid.properties = {
@@ -65,7 +66,7 @@ for( name in tmp ){
           15,
           15
         ]
-    },
+    };
     geojson.features.push(centroid);
   }
   
